@@ -17,6 +17,7 @@
 		<attr name="pickerTitle" format="reference|string"/>
 		<attr name="pickerButtonOk" format="reference|string"/>
 		<attr name="pickerButtonCancel" format="reference|string"/>
+		<attr name="pickerButtonNeutral" format="reference|string"/>
 	</declare-styleable>
 
 	<declare-styleable name="AbsCustomSlider">

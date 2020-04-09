@@ -82,6 +82,11 @@ public class SampleActivity extends AppCompatActivity {
 							public void onClick(DialogInterface dialog, int which) {
 							}
 						})
+						.setNeutralButton("default", new DialogInterface.OnClickListener() {
+							@Override
+							public void onClick(DialogInterface dialog, int which) {
+							}
+						})
 						.showColorEdit(true)
 						.setColorEditTextColor(ContextCompat.getColor(SampleActivity.this, android.R.color.holo_blue_bright))
 						.build()

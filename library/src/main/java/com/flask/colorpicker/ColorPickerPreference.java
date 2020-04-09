@@ -29,6 +29,7 @@ public class ColorPickerPreference extends Preference {
 	private String pickerTitle;
 	private String pickerButtonCancel;
 	private String pickerButtonOk;
+	private String pickerButtonNeutral;
 
 	protected ImageView colorIndicator;
 
@@ -71,6 +72,10 @@ public class ColorPickerPreference extends Preference {
 			pickerButtonOk = typedArray.getString(R.styleable.ColorPickerPreference_pickerButtonOk);
 			if (pickerButtonOk==null)
 				pickerButtonOk = "ok";
+
+			pickerButtonNeutral = typedArray.getString(R.styleable.ColorPickerPreference_pickerButtonNeutral);
+			if (pickerButtonNeutral==null)
+				pickerButtonNeutral = "default";
 
 		} finally {
 			typedArray.recycle();
@@ -129,7 +134,7 @@ public class ColorPickerPreference extends Preference {
 				public void onClick(DialogInterface dialog, int selectedColorFromPicker, Integer[] allColors) {
 					setValue(selectedColorFromPicker);
 				}
-			})
+			}).setNeutralButton(pickerButtonNeutral, null)
 			.setNegativeButton(pickerButtonCancel, null);
 
 		if (!alphaSlider && !lightSlider) builder.noSliders();
